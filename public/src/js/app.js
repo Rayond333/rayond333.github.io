@@ -1,6 +1,6 @@
 var pwaCard = document.querySelector('#pwa');
-var pwaCardContent = pwaCard.querySelector('/public/src/js/card__content');
-var pwaCardDetails = pwaCard.querySelector('/public/src/js/card__details');
+var pwaCardContent = pwaCard.querySelector('.card__content');
+var pwaCardDetails = pwaCard.querySelector('.card__details');
 var detailsShown = false;
 
 if('serviceWorker' in navigator) {
