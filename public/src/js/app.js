@@ -1,7 +1,7 @@
-var pwaCard = document.querySelector('#pwa');
+/* var pwaCard = document.querySelector('#pwa');
 var pwaCardContent = pwaCard.querySelector('.card__content');
 var pwaCardDetails = pwaCard.querySelector('.card__details');
-var detailsShown = false;
+var detailsShown = false; */
 
 if('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/public/sw.js')
@@ -10,7 +10,7 @@ if('serviceWorker' in navigator) {
     });
 }
 
-pwaCard.addEventListener('click', function (event) {
+/* pwaCard.addEventListener('click', function (event) {
   if (!detailsShown) {
     detailsShown = true;
     pwaCardContent.style.opacity = 0;
@@ -28,7 +28,7 @@ pwaCard.addEventListener('click', function (event) {
       pwaCardContent.style.opacity = 1;
     }, 300);
   }
-});
+}); */
 
 // CAMERA & AUDIO
 function getUserMedia(constraints) {
