@@ -153,7 +153,7 @@ function addStreamToVideoTag(stream, tag) {
 }
 
 // GEOLOCATION
-var target = document.getElementById('target');
+/* var target = document.getElementById('target');
 var watchId;
 
 function appendLocation(location, verb) {
@@ -172,7 +172,7 @@ if ('geolocation' in navigator) {
   });
 } else {
   target.innerText = 'Geolocation API not supported.';
-}
+} */
 
 // PROXIMITY SENSORS
 /* var box = document.getElementById('box');
