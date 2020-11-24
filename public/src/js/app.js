@@ -151,3 +151,45 @@ function addStreamToVideoTag(stream, tag) {
     mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
   }
 }
+
+// GEOLOCATION
+var target = document.getElementById('target');
+var watchId;
+
+function appendLocation(location, verb) {
+  verb = verb || 'updated';
+  var newLocation = document.createElement('p');
+  newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
+  target.appendChild(newLocation);
+}
+
+if ('geolocation' in navigator) {
+  document.getElementById('askButton').addEventListener('click', function () {
+    navigator.geolocation.getCurrentPosition(function (location) {
+      appendLocation(location, 'fetched');
+    });
+    watchId = navigator.geolocation.watchPosition(appendLocation);
+  });
+} else {
+  target.innerText = 'Geolocation API not supported.';
+}
+
+// PROXIMITY SENSORS
+var box = document.getElementById('box');
+
+function onDeviceProximityChanged(event) {
+  document.getElementById('deviceValue').innerHTML = event.value + ' cm (' + event.min + '-' + event.max + ' cm range)';
+  
+  var size = Math.min(200, Math.max(20, 500 / (event.value || 1)));
+  
+  box.style.width = size + 'px';
+  box.style.height = size + 'px';
+}
+
+function onUserProximityChanged(event) {
+  document.getElementById('nearValue').innerHTML = event.near ? 'near' : 'rather far';
+  box.style.backgroundColor = event.near ? 'red' : 'green';
+}
+
+window.addEventListener('deviceproximity', onDeviceProximityChanged);
+window.addEventListener('userproximity', onUserProximityChanged);
