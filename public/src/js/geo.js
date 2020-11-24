@@ -1,7 +1,11 @@
 
 // GEOLOCATION
-var target = document.getElementById('target');
-var watchId;
+
+
+window.onload=function(){
+    var target = document.getElementById('target');
+    var watchId;
+  }
 
 function appendLocation(location, verb) {
   verb = verb || 'updated';
