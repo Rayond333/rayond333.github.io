@@ -98,12 +98,34 @@
     
     theImageCapturer.takePhoto()
       .then(blob => {
-        var img = URL.createObjectURL(blob);
+        var theImageTag = document.getElementById("imageTag");
+        var imgCanvas = document.createElement("canvas"),
+        imgContext = imgCanvas.getContext("2d");
+
+        // Make sure canvas is as big as the picture
+        imgCanvas.width = theImageTag.width;
+        imgCanvas.height = theImageTag.height;
+
+        // Draw image into canvas element
+        imgContext.drawImage(theImageTag, 0, 0, theImageTag.width, theImageTag.height); 
+        
+        // Get canvas contents as a data URL
+        var imgAsDataURL = imgCanvas.toDataURL("image/png");
+
+        // Save image into localStorage
+        try {
+            localStorage.setItem("bild", imgAsDataURL);
+        }
+        catch (e) {
+            console.log("Storage failed: " + e);
+        }
+        
+        /* var img = URL.createObjectURL(blob);
 
         localStorage.setItem("bild", img);
 
         var theImageTag = document.getElementById("imageTag");
-        theImageTag.src = URL.createObjectURL(blob);
+        theImageTag.src = URL.createObjectURL(blob); */
       })
       .catch(err => alert('Error: ' + err));
 
