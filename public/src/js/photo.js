@@ -95,32 +95,33 @@
     }
     
     var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
-    var imgCanvas = document.createElement("canvas"),
-    imgContext = imgCanvas.getContext("2d");
-    
   
     theImageCapturer.takePhoto();
 
-    //   .then(blob => {
-        var theImageTag = document.getElementById("canvas");
-        imgCanvas.width = theImageTag.width;
-        imgCanvas.height = theImageTag.height;
-        imgContext.drawImage(theImageTag, 0, 0, theImageTag.width, theImageTag.height);
+    // Get a reference to the image element
+    var img = document.getElementById("canvas");
+
+    // Take action when the image has loaded
+    img.addEventListener("load", function () {
+        var imgCanvas = document.createElement("canvas"),
+            imgContext = imgCanvas.getContext("2d");
+
+        // Make sure canvas is as big as the picture
+        imgCanvas.width = img.width;
+        imgCanvas.height = img.height;
+
+        // Draw image into canvas element
+        imgContext.drawImage(img, 0, 0, img.width, img.height);
+
+        // Get canvas contents as a data URL
         var imgAsDataURL = imgCanvas.toDataURL("image/png");
+
+        // Save image into localStorage
         try {
-            localStorage.setItem("bild", imgAsDataURL);
+            localStorage.setItem("img", imgAsDataURL);
         }
         catch (e) {
             console.log("Storage failed: " + e);
         }
-        /* console.log(theImageTag)
-        theImageTag.src = URL.createObjectURL(blob);
-        console.log(theImageTag.src = URL.createObjectURL(blob));
-        localStorage.setItem("image",theImageTag.src); */
-        
-        
-        
-    //   })
-    //   .catch(err => alert('Error: ' + err));
-    // 
-    }
+        }, false); 
+  }
