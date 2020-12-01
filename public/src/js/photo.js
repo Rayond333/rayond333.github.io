@@ -95,7 +95,8 @@
     }
     
     var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
-    var bild = theImageCapturer.takePhoto();
+    
+    theImageCapturer.takePhoto();
 
     // Get a reference to the image element
     var img = document.getElementById("canvas");
