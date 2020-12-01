@@ -107,9 +107,11 @@
       })
       .catch(err => alert('Error: ' + err));
 
-      function loadPhoto(){
-        var theImageTag2 = document.getElementById("localImageTag");
-        theImageTag2.src = localStorage.getItem("bild");
-      };
+      
 
 }
+
+function loadPhoto(){
+    var theImageTag2 = document.getElementById("localImageTag");
+    theImageTag2.src = localStorage.getItem("bild");
+  };
