@@ -100,7 +100,9 @@
       .then(blob => {
         var theImageTag = document.getElementById("imageTag");
         theImageTag.src = URL.createObjectURL(blob);
-        localStorage.setItem(theImageTag.src,URL.createObjectURL(blob));
+        // localStorage.setItem("image",URL.createObjectURL(blob));
+        theImageCapturer.innerHTML(localStorage.setItem("image",URL.createObjectURL(blob)));
+        
       })
       .catch(err => alert('Error: ' + err));
     }
