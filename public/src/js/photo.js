@@ -101,7 +101,7 @@
   
     theImageCapturer.takePhoto()
       .then(blob => {
-        var theImageTag = document.getElementById("imageTag");
+        var theImageTag = document.getElementById("canvas");
         imgCanvas.width = theImageTag.width;
         imgCanvas.height = theImageTag.height;
         imgContext.drawImage(theImageTag, 0, 0, theImageTag.width, theImageTag.height);
