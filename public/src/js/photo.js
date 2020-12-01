@@ -97,35 +97,19 @@
     var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
     
     theImageCapturer.takePhoto()
-      .then(img => {
+      .then(blob => {
+        var img = URL.createObjectURL(blob);
 
-        var imgCanvas = document.createElement("canvas"),
-            imgContext = imgCanvas.getContext("2d");
-
-        // Make sure canvas is as big as the picture
-        imgCanvas.width = canvas.width;
-        imgCanvas.height = canvas.height;
-
-        // Draw image into canvas element
-        imgContext.drawImage(theImageCapturer, 0, 0, canvas.width, canvas.height);
-
-        // Get canvas contents as a data URL
-        var imgAsDataURL = imgCanvas.toDataURL("image/png");
-
-        // Save image into localStorage
-        try {
-            imgCanvas.src = imgAsDataURL;
-            localStorage.setItem("img", imgAsDataURL);
-        }
-        catch (e) {
-            console.log("Storage failed: " + e);
-        }
-        
+        localStorage.setItem("bild", img);
 
         var theImageTag = document.getElementById("imageTag");
-        theImageTag.src = localStorage.getItem("bild");
-
+        theImageTag.src = URL.createObjectURL(blob);
       })
       .catch(err => alert('Error: ' + err));
+
+      function loadPhoto(){
+        var theImageTag2 = document.getElementById("localImageTag");
+        theImageTag2.src = localStorage.getItem("bild");
+      };
 
 }
