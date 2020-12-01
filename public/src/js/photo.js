@@ -107,7 +107,7 @@
         imgCanvas.height = theImageTag.height;
 
         // Draw image into canvas element
-        imgContext.drawImage(theImageTag, 0, 0, theImageTag.width, theImageTag.height); 
+        imgContext.drawImage(blob, 0, 0, theImageTag.width, theImageTag.height); 
         
         // Get canvas contents as a data URL
         var imgAsDataURL = imgCanvas.toDataURL("image/png");
