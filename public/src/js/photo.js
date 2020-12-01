@@ -99,9 +99,11 @@
     theImageCapturer.takePhoto()
       .then(blob => {
         var theImageTag = document.getElementById("imageTag");
+        console.log(theImageTag)
         theImageTag.src = URL.createObjectURL(blob);
         // localStorage.setItem("image",URL.createObjectURL(blob));
-        theImageCapturer.innerHTML(localStorage.setItem("image",URL.createObjectURL(blob)));
+        
+        
         
       })
       .catch(err => alert('Error: ' + err));
