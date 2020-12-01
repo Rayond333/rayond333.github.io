@@ -95,14 +95,27 @@
     }
     
     var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
+    var imgCanvas = document.createElement("canvas"),
+    imgContext = imgCanvas.getContext("2d");
+    
   
     theImageCapturer.takePhoto()
       .then(blob => {
         var theImageTag = document.getElementById("imageTag");
-        console.log(theImageTag)
+        imgCanvas.width = theImageTag.width;
+        imgCanvas.height = theImageTag.height;
+        imgContext.drawImage(theImageTag, 0, 0, theImageTag.width, theImageTag.height);
+        var imgAsDataURL = imgCanvas.toDataURL("image/png");
+        try {
+            localStorage.setItem("bild", imgAsDataURL);
+        }
+        catch (e) {
+            console.log("Storage failed: " + e);
+        }
+        /* console.log(theImageTag)
         theImageTag.src = URL.createObjectURL(blob);
         console.log(theImageTag.src = URL.createObjectURL(blob));
-        localStorage.setItem("image",theImageTag.src);
+        localStorage.setItem("image",theImageTag.src); */
         
         
         
