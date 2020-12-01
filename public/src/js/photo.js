@@ -95,8 +95,7 @@
     }
     
     var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
-  
-    theImageCapturer.takePhoto();
+    var bild = theImageCapturer.takePhoto();
 
     // Get a reference to the image element
     var img = document.getElementById("canvas");
@@ -112,12 +111,14 @@
 
         // Draw image into canvas element
         imgContext.drawImage(img, 0, 0, img.width, img.height);
+        
 
         // Get canvas contents as a data URL
         var imgAsDataURL = imgCanvas.toDataURL("image/png");
 
         // Save image into localStorage
         try {
+            img.src = imgAsDataURL;
             localStorage.setItem("img", imgAsDataURL);
         }
         catch (e) {
