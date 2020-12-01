@@ -101,6 +101,7 @@
         var theImageTag = document.getElementById("imageTag");
         console.log(theImageTag)
         theImageTag.src = URL.createObjectURL(blob);
+        console.log(theImageTag.src = URL.createObjectURL(blob));
         // localStorage.setItem("image",URL.createObjectURL(blob));
         
         
