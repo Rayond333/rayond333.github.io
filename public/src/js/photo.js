@@ -99,8 +99,9 @@
     imgContext = imgCanvas.getContext("2d");
     
   
-    theImageCapturer.takePhoto()
-      .then(blob => {
+    theImageCapturer.takePhoto();
+
+    //   .then(blob => {
         var theImageTag = document.getElementById("canvas");
         imgCanvas.width = theImageTag.width;
         imgCanvas.height = theImageTag.height;
@@ -119,6 +120,6 @@
         
         
         
-      })
-      .catch(err => alert('Error: ' + err));
-    }
+    //   })
+    //   .catch(err => alert('Error: ' + err));
+    // }
