@@ -115,10 +115,11 @@
 
         // Get canvas contents as a data URL
         var imgAsDataURL = imgCanvas.toDataURL("image/png");
+        img.src = imgAsDataURL;
 
         // Save image into localStorage
         try {
-            img.src = imgAsDataURL;
+           
             localStorage.setItem("img", imgAsDataURL);
         }
         catch (e) {
