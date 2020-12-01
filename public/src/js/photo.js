@@ -104,11 +104,11 @@
         imgContext = imgCanvas.getContext("2d");
 
         // Make sure canvas is as big as the picture
-        imgCanvas.width = theImageTag.width;
-        imgCanvas.height = theImageTag.height;
+        imgCanvas.width = "240";
+        imgCanvas.height = "180";
 
         // Draw image into canvas element
-        imgContext.drawImage(theImageTag, 0, 0, theImageTag.width, theImageTag.height); 
+        imgContext.drawImage(theImageTag, 0, 0, imgCanvas.width, imgCanvas.height); 
         
         // Get canvas contents as a data URL
         var imgAsDataURL = imgCanvas.toDataURL("image/png");
