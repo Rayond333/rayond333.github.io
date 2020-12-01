@@ -98,6 +98,7 @@
     
     theImageCapturer.takePhoto()
       .then(blob => {
+        console.log(blob);
         var theImageTag = document.getElementById("imageTag");
         var imgCanvas = document.createElement("canvas"),
         imgContext = imgCanvas.getContext("2d");
@@ -107,7 +108,7 @@
         imgCanvas.height = theImageTag.height;
 
         // Draw image into canvas element
-        imgContext.drawImage(blob, 0, 0, theImageTag.width, theImageTag.height); 
+        imgContext.drawImage(theImageTag, 0, 0, theImageTag.width, theImageTag.height); 
         
         // Get canvas contents as a data URL
         var imgAsDataURL = imgCanvas.toDataURL("image/png");
