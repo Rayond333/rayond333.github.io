@@ -120,3 +120,5 @@ function getUserMedia(constraints) {
       mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
     }
   }
+
+ 

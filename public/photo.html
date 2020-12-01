@@ -5,7 +5,7 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
-        <title>VIDEO</title>
+        <title>PHOTO</title>
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
         <link rel="stylesheet" href="/public/src/css/app.css">
         <link rel ="manifest" href="/public/manifest.json">
@@ -13,30 +13,7 @@
       </head>
       <body>
         <a href="/public/index.html">ZURÜCK</a>
-        <h2>VIDEO & AUDIO</h2>
-        <div class="columns">
-        <div class="column">
-            <p><button type="button" onclick="getStream('video')">Grab video</button></p>
-            
-            <video controls autoplay style="height:180px; width: 240px;"></video>
-        </div>
-        <div class="column">
-            <p><button type="button" onclick="getStream('audio')">Grab audio</button></p>
-            
-            <audio controls></audio>
-        </div>
-        </div>
-
-        <h2>REALTIME COMMUNICATION</h2>
-        <p><button onclick="getStream1()">Grab video & start local peer connection</button></p>
-
-        <p>Local video</p>
-        <video autoplay id="localVideo" style="height:180px; width: 240px;" poster="https://image.freepik.com/free-icon/video-camera-symbol_318-40225.png"></video>
-
-        <p>Remote video</p>
-        <video autoplay id="remoteVideo" style="height:180px; width: 240px;"></video>
-
-
+        <h2>PHOTO</h2>
         <p>
             <label>Engine</label>
           </p>
@@ -50,5 +27,5 @@
             <input type="text" id="value">
           </p>
 </body>
-<script src="/public/src/js/video.js"></script>
+<script src="/public/src/js/photo.js"></script>
 </html>
