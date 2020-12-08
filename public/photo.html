@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
-        <title>PHOTO</title>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-        <link rel="stylesheet" href="/public/src/css/app.css">
-        <link rel ="manifest" href="/public/manifest.json">
-        
-      </head>
-      <body>
-        <a href="/public/index.html">ZURÜCK</a>
-        <h2>PHOTO</h2>
-        <p>
-            <label>Engine</label>
-          </p>
-          <div role="group" id="selectEngine">
-            <input type="radio" name="engine" value="localStorage" checked/> Persistent Storage
-            <input type="radio" name="engine" value="sessionStorage"/> Per-Session Storage
-          </div>
-          
-          <p>
-            <label for="value">Value for <code>myKey</code></label>
-            <input type="text" id="value">
-          </p>
 
-          <p><button onclick="getStream()">Grab video</button></p>
-            <p><video autoplay style="height: 180px; width: 240px;"></video></p>
-            <p><button onclick="takePhoto()">Take Photo!</button></p>
-            <p><canvas id="imageTag" width="240" height="180"></canvas></p>
-            <p><img id="imageTag" width="240" height="180"></p>
-            <p><button onclick="loadPhoto()">Load Photo!</button></p>
-            <p><img id="localImageTag" width="240" height="180"></p>
-            
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <title>PHOTO</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="/public/src/css/app.css">
+  <link rel="manifest" href="/public/manifest.json">
+
+</head>
+
+<body>
+  <a href="/public/index.html">ZURÜCK</a>
+  <h2>PHOTO</h2>
+  <p>
+    <label>Engine</label>
+  </p>
+  <div role="group" id="selectEngine">
+    <input type="radio" name="engine" value="localStorage" checked /> Persistent Storage
+    <input type="radio" name="engine" value="sessionStorage" /> Per-Session Storage
+  </div>
+
+  <p>
+    <label for="value">Value for <code>myKey</code></label>
+    <input type="text" id="value">
+  </p>
+
+  <p><button onclick="getStream()">Grab video</button></p>
+  <p><video autoplay style="height: 180px; width: 240px;"></video></p>
+  <p><button onclick="takePhoto()">Take Photo!</button></p>
+  <p><img id="imageTag" width="240" height="180"></p>
+  <p><button onclick="loadPhoto()">Load Photo!</button></p>
+  <p><img id="localImageTag" width="240" height="180"></p>
+
+
 
 </body>
 <script src="/public/src/js/photo.js"></script>
+
 </html>
