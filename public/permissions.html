@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>GEOLOCATION</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/public/src/css/app.css">
+    <link rel="manifest" href="/public/manifest.json">
+
+</head>
+
+<body>
+    <a href="/public/index.html">ZURÜCK</a>
+    <h2>PERMISSIONS</h2>
+    <div>
+        <p>
+            <b><a href="/geolocation.html">Geolocation</a></b> permission status is <b
+                id="geolocation-status">unknown</b>.
+
+            <button onclick="requestGeolocation()">Request</button>
+        </p>
+        <p>
+            <b><a href="/local-notifications.html">Notifications</a></b> permission status is <b
+                id="notifications-status">unknown</b>.
+
+            <button onclick="requestNotifications()">Request</button>
+        </p>
+        <p>
+            <b><a href="/push-notifications.html">Push</a></b> permission status is <b id="push-status">unknown</b>.
+
+            <button onclick="requestPush()">Request</button>
+        </p>
+        <p>
+            <b>Midi</b> permission status is <b id="midi-status">unknown</b>.
+
+            <button onclick="requestMidi()">Request</button>
+        </p>
+        <p>
+            <b><a href="/camera-microphone.html">Camera</a></b> permission status is <b id="camera-status">unknown</b>.
+
+            <button onclick="requestCamera()">Request</button>
+        </p>
+        <p>
+            <b><a href="/camera-microphone.html">Microphone</a></b> permission status is <b
+                id="microphone-status">unknown</b>.
+
+            <button onclick="requestMicrophone()">Request</button>
+        </p>
+        <p>
+            <b><a href="/background-sync.html">Background Sync</a></b> permission status is <b
+                id="background-sync-status">unknown</b>.
+        </p>
+        <p>
+            <b><a href="/ambient-light.html">Ambient Light Sensor</a></b> permission status is <b
+                id="ambient-light-sensor-status">unknown</b>.
+        </p>
+        <p>
+            <b><a href="/device-motion.html">Accelerometer</a></b> permission status is <b
+                id="accelerometer-status">unknown</b>.
+        </p>
+        <p>
+            <b><a href="/device-motion.html">Gyroscope</a></b> permission status is <b
+                id="gyroscope-status">unknown</b>.
+        </p>
+        <p>
+            <b><a href="/device-motion.html">Magnetometer</a></b> permission status is <b
+                id="magnetometer-status">unknown</b>.
+        </p>
+    </div>
+
+</body>
+<script src="/public/src/js/permissions.js"></script>
+
+</html>
