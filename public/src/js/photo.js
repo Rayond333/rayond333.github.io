@@ -84,57 +84,39 @@
   }
   
   function takePhoto() {
+    console.log('in takePhoto');
     if (!('ImageCapture' in window)) {
-      alert('ImageCapture is not available');
-      return;
+        alert('ImageCapture is not available');
+        return;
     }
-    
+
     if (!theStream) {
-      alert('Grab the video stream first!');
-      return;
+        alert('Grab the video stream first!');
+        return;
     }
-    
+
     var theImageCapturer = new ImageCapture(theStream.getVideoTracks()[0]);
-    
+
     theImageCapturer.takePhoto()
-      .then(blob => {
-        console.log(blob);
-        var theImageTag = document.getElementById("imageTag");
-        var imgCanvas = document.createElement("canvas"),
-        imgContext = imgCanvas.getContext("2d");
+        .then(blob => {
+            var theImageTag = document.getElementById('imageTag');
+            theImageTag.src = URL.createObjectURL(blob);
+            var reader = new FileReader();
+            reader.readAsDataURL(blob);
+            reader.onloadend = function () {
+                var base64String = reader.result;
+                console.log('Base64 String - ', base64String);
 
-        // Make sure canvas is as big as the picture
-        imgCanvas.width = "240";
-        imgCanvas.height = "180";
+                localStorage.setItem("bild", base64String); 
+            }
+           
 
-        // Draw image into canvas element
-        imgContext.drawImage(theImageTag, 0, 0, imgCanvas.width, imgCanvas.height); 
-        
-        // Get canvas contents as a data URL
-        var imgAsDataURL = imgCanvas.toDataURL("image/png");
-
-        // Save image into localStorage
-        try {
-            localStorage.setItem("bild", imgAsDataURL);
-        }
-        catch (e) {
-            console.log("Storage failed: " + e);
-        }
-        
-        /* var img = URL.createObjectURL(blob);
-
-        localStorage.setItem("bild", img);
-
-        var theImageTag = document.getElementById("imageTag");
-        theImageTag.src = URL.createObjectURL(blob); */
-      })
-      .catch(err => alert('Error: ' + err));
-
-      
-
+            })
+        .catch(err => alert('Error: ' + err));
 }
 
-function loadPhoto(){
-    var theImageTag2 = document.getElementById("localImageTag");
+function loadPhoto() {
+    var theImageTag2 = document.getElementById("imageTagLoad");
     theImageTag2.src = localStorage.getItem("bild");
-  };
+};
+  
