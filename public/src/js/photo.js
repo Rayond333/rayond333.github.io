@@ -117,6 +117,7 @@
 
 function loadPhoto() {
     var theImageTag2 = document.getElementById("imageTagLoad");
+    console.log(theImageTag2);
     theImageTag2.src = localStorage.getItem("bild");
 };
   
