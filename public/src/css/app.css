@@ -48,9 +48,11 @@ body, html {
 
 #link {
   text-align: center;
-  background-color: beige;
+  background-color: aliceblue;
   border-color: darkgray;
   padding-left: 80px;
   font-size: 25px;
   font-weight: bold;
+  line-height: 1.5;
+  text-decoration: blink;
 }
