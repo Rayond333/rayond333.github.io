@@ -45,3 +45,9 @@ body, html {
   display: none;
   opacity: 0;
 }
+
+.link {
+  text-align: center;
+  background-color: beige;
+  border-color: darkgray;
+}
