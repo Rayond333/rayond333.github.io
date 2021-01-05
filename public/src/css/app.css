@@ -46,7 +46,7 @@ body, html {
   opacity: 0;
 }
 
-.link {
+#link {
   text-align: center;
   background-color: beige;
   border-color: darkgray;
