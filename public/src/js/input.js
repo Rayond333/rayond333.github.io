@@ -1,0 +1,1 @@
+// gibt für diese Komponente keine JS Logik
