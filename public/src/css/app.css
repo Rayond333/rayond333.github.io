@@ -50,4 +50,7 @@ body, html {
   text-align: center;
   background-color: beige;
   border-color: darkgray;
+  padding-left: 80px;
+  font-size: 25px;
+  font-weight: bold;
 }
