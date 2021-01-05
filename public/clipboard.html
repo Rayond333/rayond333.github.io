@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>INPUT</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/public/src/css/app.css">
+    <link rel="manifest" href="/public/manifest.json">
+
+</head>
+
+<body>
+    <a href="/public/index.html">ZURÜCK</a>
+    <p class="heading">Use the forms below for programmatic clipboard access or invoke standard copy/cut/paste
+        operations with your keyboard.</p>
+    <section>
+        <label><input type="radio" name="api" value="sync"> Use older, synchronous API</label><br />
+        <label><input type="radio" name="api" value="async" checked> Use newer, asynchronous API</label>
+    </section>
+    <section>
+        <h2>Cut/Paste Example</h2>
+        <p>
+            <textarea class="js-cuttextarea">Hello! Cut me programatically or maybe try pasting here.</textarea>
+        </p>
+
+        <p>
+            <button class="js-textareacutbtn">Cut text programatically</button>
+            <button class="js-textareapastebtn">Paste text programatically</button>
+        </p>
+    </section>
+
+    <section>
+        <h2>Copy Example</h2>
+        <p>Email me at <a class="js-emaillink" href="mailto:matt@example.co.uk">matt@example.co.uk</a></p>
+        <p>
+            <button class="js-emailcopybtn">Copy Email Address programatically</button>
+        </p>
+    </section>
+
+    <p id="logTarget"></p>
+
+    <p><small>Demo based on <a href="https://googlechrome.github.io/samples/cut-and-copy/index.html" target="_blank"
+                rel="noopener">Google Chrome examples</a>.</small></p>
+</body>
+<script src="/public/src/js/clipboard.js"></script>
+
+</html>
